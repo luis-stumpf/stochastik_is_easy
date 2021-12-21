@@ -43,8 +43,6 @@ public class NormalVerteilung extends JPanel {
         panel2.add(x);
         panel2.add(res);
 
-
-
         JPanel panel3 = new JPanel();
         panel3.setLayout(new GridLayout(2, 1));
         evalEW = new JButton("Erwartungswert");
@@ -56,7 +54,6 @@ public class NormalVerteilung extends JPanel {
         evalNotMore = new JButton("Nicht mehr");
         evalNotMore.addActionListener(e -> evalNotMore());
 
-
         panel3.add(evalEW);
         panel3.add(evalVar);
         panel3.add(evalMax);
@@ -65,7 +62,7 @@ public class NormalVerteilung extends JPanel {
         this.add(panel1);
         this.add(panel2);
         this.add(panel3);
-        Border border = BorderFactory.createTitledBorder("Gleichverteilung");
+        Border border = BorderFactory.createTitledBorder("Normalverteilung");
         this.setBorder(border);
 
     }
@@ -97,7 +94,6 @@ public class NormalVerteilung extends JPanel {
         if(tryEval()){
             result = ao;
             res.setText("" + String.format(Locale.US, "%.6f",result));
-
         }
     }
 

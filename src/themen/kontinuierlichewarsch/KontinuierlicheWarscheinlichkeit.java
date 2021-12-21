@@ -10,7 +10,6 @@ public class KontinuierlicheWarscheinlichkeit extends JPanel {
     JButton exponentialVerteilung;
     JButton normalVerteilung;
 
-
     public KontinuierlicheWarscheinlichkeit(CardLayout cl, JPanel cp){
 
         gleichVerteilung = new JButton("GleichVerteilung");
@@ -27,8 +26,6 @@ public class KontinuierlicheWarscheinlichkeit extends JPanel {
         this.add(gleichVerteilung);
         Border border = BorderFactory.createTitledBorder("Kontinuierliche Warscheinlickeit");
         this.setBorder(border);
-
-
     }
 
     private void toNormalVerteilung(CardLayout cl, JPanel cp) {

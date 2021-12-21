@@ -1,6 +1,8 @@
 package panels;
 
 import org.apache.commons.math3.distribution.NormalDistribution;
+import themen.diskretewarsch.DiskreteWarscheinlichkeit;
+import themen.diskretewarsch.BinominalVerteilung;
 import themen.kontinuierlichewarsch.ExponentialVerteilung;
 import themen.kontinuierlichewarsch.KontinuierlicheWarscheinlichkeit;
 import themen.kontinuierlichewarsch.Gleichverteilung;
@@ -10,18 +12,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Main extends JFrame {
-    // Timmy war hier
-    private JButton descStoch;
-    private JButton discStoch;
-    private JButton kontWarsch;
-    private JButton schlStoch;
-    private JPanel auswahl;
-    private JTextArea choose;
 
     private CardLayout cardLayout;
     private JPanel cardPanel;
-
-
 
     public Main(){
 
@@ -29,14 +22,13 @@ public class Main extends JFrame {
         cardPanel = new JPanel(cardLayout);
 
         cardPanel.add(new StandartPanel(cardLayout, cardPanel), "MENU");
-        //cardPanel.add(new)
+        cardPanel.add(new DiskreteWarscheinlichkeit(cardLayout, cardPanel), "DISK");
+        cardPanel.add(new BinominalVerteilung(), "BINO");
         cardPanel.add(new KontinuierlicheWarscheinlichkeit(cardLayout, cardPanel), "KONT");
         cardPanel.add(new Gleichverteilung(), "GLEICH");
         cardPanel.add(new ExponentialVerteilung(), "EXPO");
         cardPanel.add(new NormalVerteilung(), "NORM");
         JPanel navigationPanel= new NavigationPanel(cardLayout, cardPanel);
-
-
 
         this.add(cardPanel, BorderLayout.CENTER);
         this.add(navigationPanel, BorderLayout.SOUTH);
@@ -48,20 +40,7 @@ public class Main extends JFrame {
 
     }
 
-
     public static void main(String[] args) {
         new Main();
-
-        //PoissonDistribution a = new PoissonDistribution(2);
-
-        //System.out.println(a.probability(5));
-
-        NormalDistribution normalDistribution = new NormalDistribution(180.3, 7.17);
-        double result = normalDistribution.cumulativeProbability(175);
-
-        System.out.println(result);
-
-
-
     }
 }

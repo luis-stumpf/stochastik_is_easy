@@ -80,10 +80,6 @@ public class ExponentialVerteilung extends JPanel {
 
     private void evalMax() {
         if(tryEval()) {
-            /*Exp exp = new Exp();
-            result = 1 - exp.value(-ao*bo);
-             */
-
             ExponentialDistribution exponentialDistribution = new ExponentialDistribution(ao);
             result = exponentialDistribution.cumulativeProbability(bo);
             res.setText("" + String.format(Locale.US, "%.6f",result));
@@ -92,10 +88,6 @@ public class ExponentialVerteilung extends JPanel {
 
     private void evalMin() {
         if(tryEval()) {
-            /*
-            Exp exp = new Exp();
-            result = 1 - (1 - exp.value(-ao*bo));
-             */
             ExponentialDistribution exponentialDistribution = new ExponentialDistribution(ao);
             result = 1 - exponentialDistribution.cumulativeProbability(bo);
             res.setText("" + String.format(Locale.US, "%.6f",result));
@@ -134,6 +126,4 @@ public class ExponentialVerteilung extends JPanel {
         }
         return true;
     }
-
-
 }

@@ -18,7 +18,6 @@ public class Gleichverteilung extends JPanel{
     double bo;
     double result;
 
-
     public Gleichverteilung(){
 
         JPanel panel1 = new JPanel();
@@ -36,8 +35,6 @@ public class Gleichverteilung extends JPanel{
         panel2.add(b);
         panel2.add(res);
 
-
-
         JPanel panel3 = new JPanel();
         panel3.setLayout(new GridLayout(2, 1));
         evalEW = new JButton("Erwartungswert");
@@ -53,12 +50,7 @@ public class Gleichverteilung extends JPanel{
         this.add(panel3);
         Border border = BorderFactory.createTitledBorder("Gleichverteilung");
         this.setBorder(border);
-
-
-
     }
-
-
 
     private boolean tryEval(){
         String as = a.getText();
@@ -90,7 +82,7 @@ public class Gleichverteilung extends JPanel{
 
     private void evalVar() {
         if(tryEval()){
-            result = Math.pow((ao + bo), 2) / 12;
+            result = Math.pow((ao - bo), 2) / 12;
             res.setText("" + String.format(Locale.US, "%.6f",result));
         }
     }
