@@ -40,7 +40,7 @@ public class Main extends JFrame {
 
         this.add(cardPanel, BorderLayout.CENTER);
         this.add(navigationPanel, BorderLayout.SOUTH);
-        this.setTitle("Stochastik is Easy");
+        this.setTitle("Stochastik Cheat Engine");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setLocationRelativeTo(null);
