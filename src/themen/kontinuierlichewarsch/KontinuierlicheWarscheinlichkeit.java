@@ -1,4 +1,4 @@
-package themen;
+package themen.kontinuierlichewarsch;
 
 import javax.swing.*;
 import javax.swing.border.Border;

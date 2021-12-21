@@ -1,10 +1,10 @@
 package panels;
 
 import org.apache.commons.math3.distribution.NormalDistribution;
-import themen.ExponentialVerteilung;
-import themen.KontinuierlicheWarscheinlichkeit;
-import themen.Gleichverteilung;
-import themen.NormalVerteilung;
+import themen.kontinuierlichewarsch.ExponentialVerteilung;
+import themen.kontinuierlichewarsch.KontinuierlicheWarscheinlichkeit;
+import themen.kontinuierlichewarsch.Gleichverteilung;
+import themen.kontinuierlichewarsch.NormalVerteilung;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,6 +29,7 @@ public class Overview extends JFrame {
         cardPanel = new JPanel(cardLayout);
 
         cardPanel.add(new StandartPanel(cardLayout, cardPanel), "MENU");
+        //cardPanel.add(new)
         cardPanel.add(new KontinuierlicheWarscheinlichkeit(cardLayout, cardPanel), "KONT");
         cardPanel.add(new Gleichverteilung(), "GLEICH");
         cardPanel.add(new ExponentialVerteilung(), "EXPO");
