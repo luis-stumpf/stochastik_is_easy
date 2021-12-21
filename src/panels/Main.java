@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Main extends JFrame {
-
+    // Timmy war hier
     private JButton descStoch;
     private JButton discStoch;
     private JButton kontWarsch;
