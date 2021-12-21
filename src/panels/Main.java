@@ -9,7 +9,7 @@ import themen.kontinuierlichewarsch.NormalVerteilung;
 import javax.swing.*;
 import java.awt.*;
 
-public class Overview extends JFrame {
+public class Main extends JFrame {
 
     private JButton descStoch;
     private JButton discStoch;
@@ -23,7 +23,7 @@ public class Overview extends JFrame {
 
 
 
-    public Overview(){
+    public Main(){
 
         cardLayout = new CardLayout();
         cardPanel = new JPanel(cardLayout);
@@ -50,7 +50,7 @@ public class Overview extends JFrame {
 
 
     public static void main(String[] args) {
-        new Overview();
+        new Main();
 
         //PoissonDistribution a = new PoissonDistribution(2);
 
