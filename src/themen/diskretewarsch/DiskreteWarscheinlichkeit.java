@@ -29,7 +29,7 @@ public class DiskreteWarscheinlichkeit extends JPanel {
     }
 
     private void toPossionVerteilung(CardLayout cl, JPanel cp) {
-
+        cl.show(cp, "POIS");
     }
 
     private void toBinomVerteilung(CardLayout cl, JPanel cp) {

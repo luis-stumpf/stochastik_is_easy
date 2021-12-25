@@ -3,6 +3,7 @@ package panels;
 import themen.diskretewarsch.DiskreteWarscheinlichkeit;
 import themen.diskretewarsch.BinominalVerteilung;
 import themen.diskretewarsch.GeometrischeVerteilung;
+import themen.diskretewarsch.PoissonVerteilung;
 import themen.kontinuierlichewarsch.ExponentialVerteilung;
 import themen.kontinuierlichewarsch.KontinuierlicheWarscheinlichkeit;
 import themen.kontinuierlichewarsch.Gleichverteilung;
@@ -25,6 +26,7 @@ public class Main extends JFrame {
         cardPanel.add(new DiskreteWarscheinlichkeit(cardLayout, cardPanel), "DISK");
         cardPanel.add(new BinominalVerteilung(), "BINO");
         cardPanel.add(new GeometrischeVerteilung(), "GEO");
+        cardPanel.add(new PoissonVerteilung(), "POIS");
         cardPanel.add(new KontinuierlicheWarscheinlichkeit(cardLayout, cardPanel), "KONT");
         cardPanel.add(new Gleichverteilung(), "GLEICH");
         cardPanel.add(new ExponentialVerteilung(), "EXPO");
