@@ -2,7 +2,6 @@ package themen.kontinuierlichewarsch;
 
 import org.apache.commons.math3.analysis.function.Exp;
 import org.apache.commons.math3.distribution.ExponentialDistribution;
-import org.apache.commons.math3.distribution.NormalDistribution;
 
 import javax.swing.*;
 import javax.swing.border.Border;
