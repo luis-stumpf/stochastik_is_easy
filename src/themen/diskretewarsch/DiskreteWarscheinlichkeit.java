@@ -37,6 +37,6 @@ public class DiskreteWarscheinlichkeit extends JPanel {
     }
 
     private void toGeoVerteilug(CardLayout cl, JPanel cp) {
-
+        cl.show(cp, "GEO");
     }
 }
