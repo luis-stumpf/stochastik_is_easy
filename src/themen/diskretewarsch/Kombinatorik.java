@@ -57,16 +57,15 @@ public class Kombinatorik extends JPanel {
 
         JPanel leftResult = new JPanel();
         leftResult.setBorder(new EmptyBorder(20,20,20,20));
-        leftResult.setLayout(new GridLayout(2,2));
-        result = new JTextField("0",40);
+        leftResult.setLayout(new GridLayout(2,1));
+        result = new JTextField("0");
         type = new JTextField();
         type.setEditable(false);
         result.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         type.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         result.setEditable(false);
-        leftResult.add(new JLabel("Result"));
         leftResult.add(result);
-        leftResult.add(new JLabel("Art"));
+
         leftResult.add(type);
 
         masterPanel.add(leftResult, BorderLayout.SOUTH);
