@@ -2,6 +2,7 @@ package themen.diskretewarsch;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
 import java.awt.*;
 
 public class DiskreteWarscheinlichkeit extends JPanel {
@@ -29,7 +30,9 @@ public class DiskreteWarscheinlichkeit extends JPanel {
         this.add(binomVerteilung);
         this.add(geoVerteilung);
         this.add(kombinatorik);
-        Border border = BorderFactory.createTitledBorder("Diskrete Warscheinlickeit");
+        CompoundBorder border = new CompoundBorder(BorderFactory.createEmptyBorder(5,5,5,5),
+                BorderFactory.createTitledBorder("Diskrete Wahrscheinlichkeit"));
+
         this.setBorder(border);
     }
 

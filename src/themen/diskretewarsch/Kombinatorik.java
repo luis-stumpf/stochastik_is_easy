@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
@@ -85,7 +86,9 @@ public class Kombinatorik extends JPanel {
 
 
         this.add(masterPanel);
-        Border border = BorderFactory.createTitledBorder("Kombinatorik");
+        CompoundBorder border = new CompoundBorder(BorderFactory.createEmptyBorder(5,5,5,5),
+                BorderFactory.createTitledBorder("Kombinatorik"));
+
         this.setBorder(border);
 
     }

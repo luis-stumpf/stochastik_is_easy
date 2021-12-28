@@ -4,6 +4,7 @@ import org.apache.commons.math3.distribution.GeometricDistribution;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
 import java.awt.*;
 import java.util.Locale;
 
@@ -60,7 +61,8 @@ public class GeometrischeVerteilung extends JPanel {
         this.add(panel1);
         this.add(panel2);
         this.add(panel3);
-        Border border = BorderFactory.createTitledBorder("Geometrische Verteilung");
+        CompoundBorder border = new CompoundBorder(BorderFactory.createEmptyBorder(5,5,5,5),
+                BorderFactory.createTitledBorder("Geometrische Verteilung"));
         this.setBorder(border);
 
     }

@@ -2,6 +2,8 @@ package panels;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class StandartPanel extends JPanel {
@@ -16,6 +18,7 @@ public class StandartPanel extends JPanel {
 
 
         auswahl = new JPanel();
+        auswahl.setBorder(new EmptyBorder(5,5,5,5));
         auswahl.setLayout(new GridLayout(4, 2));
 
         descStoch = new JButton("Beschreibende Stochastik");
@@ -30,9 +33,12 @@ public class StandartPanel extends JPanel {
         auswahl.add(schlStoch);
         this.add(auswahl);
 
-        Border border = BorderFactory.createTitledBorder("Auswahl");
+        CompoundBorder border = new CompoundBorder(BorderFactory.createEmptyBorder(5,5,5,5), BorderFactory.createTitledBorder("Auswahl"));
+
         this.setBorder(border);
         this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
+
+
 
     }
 
