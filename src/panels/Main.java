@@ -1,9 +1,6 @@
 package panels;
 
-import themen.diskretewarsch.DiskreteWarscheinlichkeit;
-import themen.diskretewarsch.BinominalVerteilung;
-import themen.diskretewarsch.GeometrischeVerteilung;
-import themen.diskretewarsch.PoissonVerteilung;
+import themen.diskretewarsch.*;
 import themen.kontinuierlichewarsch.ExponentialVerteilung;
 import themen.kontinuierlichewarsch.KontinuierlicheWarscheinlichkeit;
 import themen.kontinuierlichewarsch.Gleichverteilung;
@@ -31,6 +28,7 @@ public class Main extends JFrame {
         cardPanel.add(new Gleichverteilung(), "GLEICH");
         cardPanel.add(new ExponentialVerteilung(), "EXPO");
         cardPanel.add(new NormalVerteilung(), "NORM");
+        cardPanel.add(new Kombinatorik(), "KOMB");
         JPanel navigationPanel= new NavigationPanel(cardLayout, cardPanel);
 
         this.add(cardPanel, BorderLayout.CENTER);

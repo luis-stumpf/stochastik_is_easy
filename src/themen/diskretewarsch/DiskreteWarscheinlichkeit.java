@@ -9,6 +9,7 @@ public class DiskreteWarscheinlichkeit extends JPanel {
     private JButton geoVerteilung;
     private JButton binomVerteilung;
     private JButton poissonVerteilung;
+    private JButton kombinatorik;
 
     public DiskreteWarscheinlichkeit(CardLayout cl, JPanel cp){
 
@@ -21,9 +22,13 @@ public class DiskreteWarscheinlichkeit extends JPanel {
         poissonVerteilung = new JButton("possion Verteilung");
         poissonVerteilung.addActionListener(e -> toPossionVerteilung(cl, cp));
 
+        kombinatorik = new JButton("Kombinatorik");
+        kombinatorik.addActionListener(e -> toKombinatorik(cl, cp));
+
         this.add(poissonVerteilung);
         this.add(binomVerteilung);
         this.add(geoVerteilung);
+        this.add(kombinatorik);
         Border border = BorderFactory.createTitledBorder("Diskrete Warscheinlickeit");
         this.setBorder(border);
     }
@@ -38,5 +43,9 @@ public class DiskreteWarscheinlichkeit extends JPanel {
 
     private void toGeoVerteilug(CardLayout cl, JPanel cp) {
         cl.show(cp, "GEO");
+    }
+
+    private void toKombinatorik(CardLayout cl, JPanel cp) {
+        cl.show(cp, "KOMB");
     }
 }
