@@ -1,6 +1,7 @@
 package themen.diskretewarsch;
 
 import org.apache.commons.math3.util.CombinatoricsUtils;
+import themen.diskretewarsch.info.KombinatorikInfo;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -19,6 +20,8 @@ public class Kombinatorik extends JPanel {
     private final JCheckBox waea;
     private final JCheckBox idrw;
     private final JCheckBox we;
+    private final JButton info;
+    private final JButton beispiel;
 
     public Kombinatorik(){
 
@@ -82,6 +85,16 @@ public class Kombinatorik extends JPanel {
         controlPanel.add(equals);
         controlPanel.add(reset);
 
+        JPanel infobspPanel = new JPanel();
+        info = new JButton("INFO");
+        info.addActionListener(e -> showInfo());
+        beispiel = new JButton("Beispiel");
+        beispiel.addActionListener(e -> showBsp());
+        infobspPanel.add(info);
+        infobspPanel.add(beispiel);
+
+        masterPanel.add(infobspPanel, BorderLayout.AFTER_LAST_LINE);
+
         masterPanel.add(controlPanel, BorderLayout.EAST);
 
 
@@ -91,6 +104,13 @@ public class Kombinatorik extends JPanel {
 
         this.setBorder(border);
 
+    }
+
+    private void showBsp() {
+    }
+
+    private void showInfo() {
+        new KombinatorikInfo();
     }
 
     private void boxWAEA() {
