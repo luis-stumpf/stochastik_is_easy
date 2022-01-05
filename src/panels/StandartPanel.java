@@ -21,7 +21,8 @@ public class StandartPanel extends JPanel {
         auswahl.setBorder(new EmptyBorder(5,5,5,5));
         auswahl.setLayout(new GridLayout(4, 2));
 
-        descStoch = new JButton("Beschreibende Stochastik");
+        descStoch = new JButton("Beschreibende Statistik");
+        descStoch.addActionListener(event -> toDescStoch(cl, cp));
         discStoch = new JButton("Diskrete Warscheinlichkeitstheorie");
         discStoch.addActionListener(event -> toDiscStoch(cl, cp));
         kontWarsch = new JButton("Kontinuierliche Warscheinlichkeitstheorie");
@@ -42,6 +43,9 @@ public class StandartPanel extends JPanel {
 
     }
 
+    private void toDescStoch(CardLayout cl, JPanel cp) {
+        cl.show(cp, "BESCH");
+    }
     private void toKontWarsch(CardLayout cl, JPanel cp) {
         cl.show(cp, "KONT");
     }

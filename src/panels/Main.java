@@ -1,5 +1,6 @@
 package panels;
 
+import themen.beschreibendeStatistik.BeschreibendeStatistik;
 import themen.diskretewarsch.*;
 import themen.kontinuierlichewarsch.ExponentialVerteilung;
 import themen.kontinuierlichewarsch.KontinuierlicheWarscheinlichkeit;
@@ -15,11 +16,11 @@ public class Main extends JFrame {
     private JPanel cardPanel;
 
     public Main(){
-
         cardLayout = new CardLayout();
         cardPanel = new JPanel(cardLayout);
 
         cardPanel.add(new StandartPanel(cardLayout, cardPanel), "MENU");
+        cardPanel.add(new BeschreibendeStatistik(), "BESCH");
         cardPanel.add(new DiskreteWarscheinlichkeit(cardLayout, cardPanel), "DISK");
         cardPanel.add(new BinominalVerteilung(), "BINO");
         cardPanel.add(new GeometrischeVerteilung(), "GEO");
