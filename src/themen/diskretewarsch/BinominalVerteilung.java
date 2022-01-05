@@ -1,6 +1,7 @@
 package themen.diskretewarsch;
 
 import org.apache.commons.math3.distribution.BinomialDistribution;
+import themen.diskretewarsch.beispiele.BinominalVerteilungBsp;
 import themen.diskretewarsch.info.BinominalVerteilungInfo;
 
 import javax.swing.*;
@@ -86,6 +87,7 @@ public class BinominalVerteilung extends JPanel{
     }
 
     private void showBsp() {
+        new BinominalVerteilungBsp();
     }
 
     private void showInfo() {
