@@ -1,8 +1,12 @@
 package themen.kontinuierlichewarsch;
 
 
+import themen.kontinuierlichewarsch.beispiele.GleichverteilungBsp;
+import themen.kontinuierlichewarsch.info.GleichVerteilungInfo;
+
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.Locale;
 
@@ -13,6 +17,8 @@ public class Gleichverteilung extends JPanel{
     private JTextField res;
     private JButton evalEW;
     private JButton evalVar;
+    private JButton info;
+    private JButton beispiel;
 
     double ao;
     double bo;
@@ -45,11 +51,30 @@ public class Gleichverteilung extends JPanel{
         panel3.add(evalEW);
         panel3.add(evalVar);
 
+        JPanel panel4 = new JPanel();
+        panel4.setBorder(new EmptyBorder(20, 20, 20, 20));
+        info = new JButton("INFO");
+        info.addActionListener(e -> showInfo());
+        beispiel = new JButton("Beispiel");
+        beispiel.addActionListener(e -> showBsp());
+
+        panel4.add(info);
+        panel4.add(beispiel);
+
         this.add(panel1);
         this.add(panel2);
         this.add(panel3);
+        this.add(panel4);
         Border border = BorderFactory.createTitledBorder("Gleichverteilung");
         this.setBorder(border);
+    }
+
+    private void showBsp() {
+        new GleichverteilungBsp();
+    }
+
+    private void showInfo() {
+        new GleichVerteilungInfo();
     }
 
     private boolean tryEval(){

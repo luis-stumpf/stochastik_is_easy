@@ -2,9 +2,12 @@ package themen.kontinuierlichewarsch;
 
 import org.apache.commons.math3.analysis.function.Exp;
 import org.apache.commons.math3.distribution.ExponentialDistribution;
+import themen.kontinuierlichewarsch.beispiele.ExponentialVerteilungBsp;
+import themen.kontinuierlichewarsch.info.ExponentialVerteilungInfo;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.Locale;
 
@@ -18,6 +21,8 @@ public class ExponentialVerteilung extends JPanel {
     private JButton evalMin;
     private JButton evalMax;
     private JButton evalQuant;
+    private JButton info;
+    private JButton beispiel;
 
     double ao;
     double bo;
@@ -58,12 +63,31 @@ public class ExponentialVerteilung extends JPanel {
         panel3.add(evalMax);
         panel3.add(evalQuant);
 
+        JPanel panel4 = new JPanel();
+        panel4.setBorder(new EmptyBorder(20, 20, 20, 20));
+        info = new JButton("INFO");
+        info.addActionListener(e -> showInfo());
+        beispiel = new JButton("Beispiel");
+        beispiel.addActionListener(e -> showBsp());
+
+        panel4.add(info);
+        panel4.add(beispiel);
+
         this.add(panel1);
         this.add(panel2);
         this.add(panel3);
+        this.add(panel4);
         Border border = BorderFactory.createTitledBorder("ExponentialVerteilung");
         this.setBorder(border);
 
+    }
+
+    private void showBsp() {
+        new ExponentialVerteilungBsp();
+    }
+
+    private void showInfo() {
+        new ExponentialVerteilungInfo();
     }
 
     // überarbeiten

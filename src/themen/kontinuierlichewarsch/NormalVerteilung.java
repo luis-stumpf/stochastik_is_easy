@@ -1,9 +1,12 @@
 package themen.kontinuierlichewarsch;
 
 import org.apache.commons.math3.distribution.NormalDistribution;
+import themen.kontinuierlichewarsch.beispiele.NormalVerteilungBsp;
+import themen.kontinuierlichewarsch.info.NormalVerteilungInfo;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.Locale;
 
@@ -17,6 +20,8 @@ public class NormalVerteilung extends JPanel {
     private JButton evalVar;
     private JButton evalMax;
     private JButton evalNotMore;
+    private JButton info;
+    private JButton beispiel;
 
     double ao;
     double bo;
@@ -59,12 +64,31 @@ public class NormalVerteilung extends JPanel {
         panel3.add(evalMax);
         panel3.add(evalNotMore);
 
+        JPanel panel4 = new JPanel();
+        panel4.setBorder(new EmptyBorder(20, 20, 20, 20));
+        info = new JButton("INFO");
+        info.addActionListener(e -> showInfo());
+        beispiel = new JButton("Beispiel");
+        beispiel.addActionListener(e -> showBsp());
+
+        panel4.add(info);
+        panel4.add(beispiel);
+
         this.add(panel1);
         this.add(panel2);
         this.add(panel3);
+        this.add(panel4);
         Border border = BorderFactory.createTitledBorder("Normalverteilung");
         this.setBorder(border);
 
+    }
+
+    private void showBsp() {
+        new NormalVerteilungBsp();
+    }
+
+    private void showInfo() {
+        new NormalVerteilungInfo();
     }
 
     private void evalNotMore() {
