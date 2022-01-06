@@ -61,16 +61,23 @@ public class Kombinatorik extends JPanel {
 
         JPanel leftResult = new JPanel();
         leftResult.setBorder(new EmptyBorder(20,20,20,20));
-        leftResult.setLayout(new GridLayout(2,1));
+        leftResult.setLayout(new GridLayout(2,2));
         result = new JTextField("0");
         type = new JTextField();
         type.setEditable(false);
         result.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         type.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         result.setEditable(false);
-        leftResult.add(result);
 
+        info = new JButton("INFO");
+        info.addActionListener(e -> showInfo());
+        beispiel = new JButton("Beispiel");
+        beispiel.addActionListener(e -> showBsp());
+
+        leftResult.add(result);
+        leftResult.add(info);
         leftResult.add(type);
+        leftResult.add(beispiel);
 
         masterPanel.add(leftResult, BorderLayout.SOUTH);
 
@@ -84,16 +91,6 @@ public class Kombinatorik extends JPanel {
         reset.addActionListener(e->resetSettings());
         controlPanel.add(equals);
         controlPanel.add(reset);
-
-        JPanel infobspPanel = new JPanel();
-        info = new JButton("INFO");
-        info.addActionListener(e -> showInfo());
-        beispiel = new JButton("Beispiel");
-        beispiel.addActionListener(e -> showBsp());
-        infobspPanel.add(info);
-        infobspPanel.add(beispiel);
-
-        masterPanel.add(infobspPanel, BorderLayout.AFTER_LAST_LINE);
 
         masterPanel.add(controlPanel, BorderLayout.EAST);
 

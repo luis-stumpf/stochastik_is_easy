@@ -23,7 +23,7 @@ public class NavigationPanel extends JPanel {
         this.add(menu);
         //this.add(next);
         /*
-        need to implement a global prev and next variable storing last page!
+        TODO: need to implement a global prev and next variable storing last page!
          */
         this.setLayout(new FlowLayout(FlowLayout.CENTER));
 
