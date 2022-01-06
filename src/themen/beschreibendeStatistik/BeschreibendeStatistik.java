@@ -1,12 +1,18 @@
 package themen.beschreibendeStatistik;
 
+import org.apache.commons.math3.exception.DimensionMismatchException;
+import org.apache.commons.math3.exception.MathIllegalArgumentException;
+import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import themen.diskretewarsch.info.BinominalVerteilungInfo;
+import org.apache.commons.math3.stat.correlation.Covariance;
+
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class BeschreibendeStatistik extends JPanel{
@@ -24,6 +30,9 @@ public class BeschreibendeStatistik extends JPanel{
     private JButton evalStdAbweichung;
     private JButton evalSpannweite;
     private JButton evalInterQuanAbs;
+    private JButton evalEmpKov;
+    private JButton evalKorKoef;
+
     private JButton info;
     private JButton beispiel;
 
@@ -64,7 +73,7 @@ public class BeschreibendeStatistik extends JPanel{
         panel1.add(inputQuanB);
 
         JPanel panel3 = new JPanel();
-        panel3.setLayout(new GridLayout(4, 2));
+        panel3.setLayout(new GridLayout(5, 2));
         evalMean = new JButton("Mittelwert (A&B)");
         evalMean.addActionListener(e -> evalMean());
         evalMedian = new JButton("Median (A&B)");
@@ -81,6 +90,10 @@ public class BeschreibendeStatistik extends JPanel{
         evalSpannweite.addActionListener(event -> evalSpannweite());
         evalInterQuanAbs = new JButton("Interquantilabstand (A&B)");
         evalInterQuanAbs.addActionListener(event -> evalInterQuanAbs());
+        evalEmpKov = new JButton("Kovarianz");
+        evalEmpKov.addActionListener(event -> evalEmpKov());
+        evalKorKoef = new JButton("Korrelationskoef");
+        evalKorKoef.addActionListener(event -> evalKorKoef());
 
         panel3.add(evalMean);
         panel3.add(evalMedian);
@@ -90,6 +103,8 @@ public class BeschreibendeStatistik extends JPanel{
         panel3.add(evalStdAbweichung);
         panel3.add(evalSpannweite);
         panel3.add(evalInterQuanAbs);
+        panel3.add(evalEmpKov);
+        panel3.add(evalKorKoef);
 
         JPanel panel4 = new JPanel();
         panel4.setBorder(new EmptyBorder(20, 20, 20, 20));
@@ -248,6 +263,31 @@ public class BeschreibendeStatistik extends JPanel{
                 ausgabe.append("\nInterquantilabstand(A) = " + (valuesA.getPercentile(75) - valuesA.getPercentile(25)));
             if (ArrayB != null)
                 ausgabe.append("\nInterquantilabstand(B) = " + (valuesB.getPercentile(75) - valuesB.getPercentile(25)));
+        }
+    }
+    private void evalEmpKov() {
+        if (tryEval()) {
+            try {
+                Covariance val = new Covariance();
+                ausgabe.setText("ArrayA: " + Arrays.toString(ArrayA) + "\nArrayB: " + Arrays.toString(ArrayB));
+                ausgabe.append("\nEmpirische Kovarianz = " + val.covariance(ArrayA,ArrayB));
+            } catch (Exception e) {
+                ausgabe.setText("Ungültiges, leeres oder ungleich großes Array: " + e.getMessage());
+            }
+        }
+    }
+
+    private void evalKorKoef() {
+        if (tryEval()) {
+            try {
+                PearsonsCorrelation val = new PearsonsCorrelation();
+                ausgabe.setText("ArrayA: " + Arrays.toString(ArrayA) + "\nArrayB: " + Arrays.toString(ArrayB));
+                ausgabe.append("\nKorrelationskoeffizient = " + val.correlation(ArrayA,ArrayB));
+            } catch (DimensionMismatchException e) {
+                ausgabe.setText("Ungleiche Arraygröße: " + e.getMessage());
+            } catch (Exception e) {
+                ausgabe.setText("Ungültiges oder leeres Array: " + e.getMessage());
+            }
         }
     }
 
