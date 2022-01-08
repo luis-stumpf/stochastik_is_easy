@@ -8,6 +8,9 @@ public class NavigationPanel extends JPanel {
     JButton menu;
     JButton prev;
     JButton next;
+    public static String prevPage;
+    public static String currentPage= "MENU";
+    public static String nextPage;
 
 
     public NavigationPanel(CardLayout cl, JPanel cp){
@@ -17,27 +20,22 @@ public class NavigationPanel extends JPanel {
         prev = new JButton("<");
         prev.addActionListener(e -> goPrev(cl, cp));
         next = new JButton(">");
-        next.addActionListener(e -> goNext(cl, cp));
 
-        //this.add(prev);
+        this.add(prev);
         this.add(menu);
         //this.add(next);
-        /*
-        TODO: need to implement a global prev and next variable storing last page!
-         */
         this.setLayout(new FlowLayout(FlowLayout.CENTER));
 
     }
 
     private void goPrev(CardLayout cl, JPanel cp) {
-        cl.previous(cp);
-    }
+        nextPage = currentPage;
+        cl.show(cp, prevPage);
 
-    private void goNext(CardLayout cl, JPanel cp) {
-        cl.next(cp);
     }
 
     private void backToMenu(CardLayout cl, JPanel cp) {
+        nextPage = currentPage;
         cl.show(cp, "MENU");
     }
 }

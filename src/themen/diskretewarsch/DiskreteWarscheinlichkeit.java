@@ -1,5 +1,7 @@
 package themen.diskretewarsch;
 
+import panels.NavigationPanel;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
@@ -38,17 +40,25 @@ public class DiskreteWarscheinlichkeit extends JPanel {
 
     private void toPossionVerteilung(CardLayout cl, JPanel cp) {
         cl.show(cp, "POIS");
+        NavigationPanel.prevPage = "DISK";
+        NavigationPanel.currentPage = "POIS";
     }
 
     private void toBinomVerteilung(CardLayout cl, JPanel cp) {
         cl.show(cp, "BINO");
+        NavigationPanel.prevPage = "DISK";
+        NavigationPanel.currentPage = "BINO";
     }
 
     private void toGeoVerteilug(CardLayout cl, JPanel cp) {
         cl.show(cp, "GEO");
+        NavigationPanel.prevPage = "DISK";
+        NavigationPanel.currentPage = "GEO";
     }
 
     private void toKombinatorik(CardLayout cl, JPanel cp) {
         cl.show(cp, "KOMB");
+        NavigationPanel.prevPage = "DISK";
+        NavigationPanel.currentPage = "KOMB";
     }
 }

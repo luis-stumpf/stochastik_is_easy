@@ -1,5 +1,7 @@
 package themen.kontinuierlichewarsch;
 
+import panels.NavigationPanel;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -30,13 +32,19 @@ public class KontinuierlicheWarscheinlichkeit extends JPanel {
 
     private void toNormalVerteilung(CardLayout cl, JPanel cp) {
         cl.show(cp, "NORM");
+        NavigationPanel.prevPage = "KONT";
+        NavigationPanel.currentPage = "NORM";
     }
 
     private void toExponentialverteilung(CardLayout cl, JPanel cp) {
         cl.show(cp, "EXPO");
+        NavigationPanel.prevPage = "KONT";
+        NavigationPanel.currentPage = "EXPO";
     }
 
     private void toGelichverteilug(CardLayout cl, JPanel cp) {
         cl.show(cp, "GLEICH");
+        NavigationPanel.prevPage = "KONT";
+        NavigationPanel.currentPage = "EXPO";
     }
 }

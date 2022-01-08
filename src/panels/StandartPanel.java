@@ -45,12 +45,18 @@ public class StandartPanel extends JPanel {
 
     private void toDescStoch(CardLayout cl, JPanel cp) {
         cl.show(cp, "BESCH");
+        NavigationPanel.prevPage = "MENU";
+        NavigationPanel.currentPage = "BESCH";
     }
     private void toKontWarsch(CardLayout cl, JPanel cp) {
         cl.show(cp, "KONT");
+        NavigationPanel.prevPage = "MENU";
+        NavigationPanel.currentPage = "KONT";
     }
 
     private void toDiscStoch(CardLayout cl, JPanel cp) {
         cl.show(cp, "DISK");
+        NavigationPanel.prevPage = "MENU";
+        NavigationPanel.currentPage = "DISK";
     }
 }
