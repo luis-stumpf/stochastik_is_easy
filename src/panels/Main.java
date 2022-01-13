@@ -9,7 +9,7 @@ import themen.kontinuierlichewarsch.NormalVerteilung;
 
 import javax.swing.*;
 import java.awt.*;
-
+//a
 public class Main extends JFrame {
 
     private CardLayout cardLayout;
