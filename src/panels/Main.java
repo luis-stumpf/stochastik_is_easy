@@ -34,7 +34,7 @@ public class Main extends JFrame {
 
         this.add(cardPanel, BorderLayout.CENTER);
         this.add(navigationPanel, BorderLayout.SOUTH);
-        this.setTitle("Stochastik Cheat Engine");
+        this.setTitle("Stochastik Rechner");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setLocationRelativeTo(null);
