@@ -28,6 +28,8 @@ public class NormalVerteilung extends JPanel {
     double xo;
     double result;
 
+    //TODO nicht mehr button umbenenen ;)
+
     public NormalVerteilung(){
 
         JPanel panel1 = new JPanel();
