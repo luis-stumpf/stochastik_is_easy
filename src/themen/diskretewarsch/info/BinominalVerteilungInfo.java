@@ -1,15 +1,17 @@
 package themen.diskretewarsch.info;
 
 import javax.swing.*;
+import java.net.URL;
 
 public class BinominalVerteilungInfo {
 
+    URL imageUrl = ClassLoader.getSystemResource("diskreteWarsch/binominalverteilunginfo.PNG");
     JFrame frame = new JFrame();
     JLabel label = new JLabel("TEST");
     JPanel infoPanel = new JPanel();
 
     public BinominalVerteilungInfo() {
-        ImageIcon icon = new ImageIcon("src/res/diskreteWarsch/binominalverteilunginfo.PNG");
+        ImageIcon icon = new ImageIcon(imageUrl);
         JLabel label = new JLabel();
         label.setIcon(icon);
         infoPanel.add(label);

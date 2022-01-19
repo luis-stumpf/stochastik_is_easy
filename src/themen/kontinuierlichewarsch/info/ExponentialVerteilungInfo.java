@@ -1,15 +1,17 @@
 package themen.kontinuierlichewarsch.info;
 
 import javax.swing.*;
+import java.net.URL;
 
 public class ExponentialVerteilungInfo {
 
+    URL imageUrl = ClassLoader.getSystemResource("kontinuierlicheWarsch/exponentialverteilunginfo.PNG");
     JFrame frame = new JFrame();
     JLabel label = new JLabel("TEST");
     JPanel infoPanel = new JPanel();
 
     public ExponentialVerteilungInfo() {
-        ImageIcon icon = new ImageIcon("src/res/kontinuierlicheWarsch/exponentialverteilunginfo.PNG");
+        ImageIcon icon = new ImageIcon(imageUrl);
         JLabel label = new JLabel();
         label.setIcon(icon);
         infoPanel.add(label);
