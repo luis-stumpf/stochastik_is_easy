@@ -245,8 +245,10 @@ public class BeschreibendeStatistik extends JPanel{
     }
     private void evalStdAbweichung() {
         if(tryEval()){
-            ausgabe.append("\nStandartabweichung(A) = " + valuesA.getStandardDeviation());
-            ausgabe.append("\nStandartabweichung(A) = " + valuesA.getStandardDeviation());
+            if (ArrayA != null)
+                ausgabe.append("\nStandartabweichung(A) = " + valuesA.getStandardDeviation());
+            if (ArrayB != null)
+                ausgabe.append("\nStandartabweichung(B) = " + valuesB.getStandardDeviation());
         }
     }
     private void evalSpannweite() {
