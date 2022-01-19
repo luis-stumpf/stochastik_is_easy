@@ -31,7 +31,7 @@ public class Kombinatorik extends JPanel {
         JPanel leftPanel = new JPanel();
         leftPanel.setBorder(new EmptyBorder(new Insets(20,20,20,20)));
         leftPanel.setLayout(new GridLayout(2,2));
-        gesamt = new JTextField("0",20); //TODO: Zeigt 96! fakultät nicht an weil zu klein, fix shitty formatierung
+        gesamt = new JTextField("0",20);
         auswahl = new JTextField("0",20);
         leftPanel.add(new JLabel("Gesamtmenge"));
         leftPanel.add(gesamt);
