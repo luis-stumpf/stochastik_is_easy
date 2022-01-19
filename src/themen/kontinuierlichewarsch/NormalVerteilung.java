@@ -19,6 +19,7 @@ public class NormalVerteilung extends JPanel {
     private JButton evalEW;
     private JButton evalVar;
     private JButton evalMax;
+    private JButton evalMin;
     private JButton evalNotMore;
     private JButton info;
     private JButton beispiel;
@@ -58,12 +59,15 @@ public class NormalVerteilung extends JPanel {
         evalVar.addActionListener(e -> evalVar());
         evalMax = new JButton("Höchstens");
         evalMax.addActionListener(e -> evalMax());
+        evalMin = new JButton("Mindestens");
+        evalMin.addActionListener(e -> evalMin());
         evalNotMore = new JButton("Nicht mehr");
         evalNotMore.addActionListener(e -> evalNotMore());
 
         panel3.add(evalEW);
         panel3.add(evalVar);
         panel3.add(evalMax);
+        panel3.add(evalMin);
         panel3.add(evalNotMore);
 
         JPanel panel4 = new JPanel();
@@ -83,6 +87,14 @@ public class NormalVerteilung extends JPanel {
         Border border = BorderFactory.createTitledBorder("Normalverteilung");
         this.setBorder(border);
 
+    }
+
+    private void evalMin() {
+        if(tryEval()) {
+            NormalDistribution normalDistribution = new NormalDistribution(ao, bo);
+            result = 1 - normalDistribution.cumulativeProbability(xo);
+            res.setText("" + String.format(Locale.US, "%.6f", result));
+        }
     }
 
     private void showBsp() {
