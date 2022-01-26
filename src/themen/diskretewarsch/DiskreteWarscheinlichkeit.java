@@ -13,6 +13,7 @@ public class DiskreteWarscheinlichkeit extends JPanel {
     private JButton binomVerteilung;
     private JButton poissonVerteilung;
     private JButton kombinatorik;
+    private JButton diskreteZufallsvariable;
 
     public DiskreteWarscheinlichkeit(CardLayout cl, JPanel cp){
 
@@ -28,14 +29,25 @@ public class DiskreteWarscheinlichkeit extends JPanel {
         kombinatorik = new JButton("Kombinatorik");
         kombinatorik.addActionListener(e -> toKombinatorik(cl, cp));
 
+
+        diskreteZufallsvariable = new JButton("Diskrete ZV");
+        diskreteZufallsvariable.addActionListener(e -> todiskZV(cl, cp));
+
         this.add(poissonVerteilung);
         this.add(binomVerteilung);
         this.add(geoVerteilung);
         this.add(kombinatorik);
+        this.add(diskreteZufallsvariable);
         CompoundBorder border = new CompoundBorder(BorderFactory.createEmptyBorder(5,5,5,5),
                 BorderFactory.createTitledBorder("Diskrete Wahrscheinlichkeit"));
 
         this.setBorder(border);
+    }
+
+    private void todiskZV(CardLayout cl, JPanel cp) {
+        cl.show(cp, "DISKZV");
+        NavigationPanel.prevPage = "DISK";
+        NavigationPanel.currentPage = "DISKZV";
     }
 
     private void toPossionVerteilung(CardLayout cl, JPanel cp) {

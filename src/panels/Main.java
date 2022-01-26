@@ -30,6 +30,7 @@ public class Main extends JFrame {
         cardPanel.add(new ExponentialVerteilung(), "EXPO");
         cardPanel.add(new NormalVerteilung(), "NORM");
         cardPanel.add(new Kombinatorik(), "KOMB");
+        cardPanel.add(new ZufallsvariableDiskret(), "DISKZV");
         JPanel navigationPanel= new NavigationPanel(cardLayout, cardPanel);
 
         this.add(cardPanel, BorderLayout.CENTER);

@@ -17,6 +17,7 @@ import java.util.*;
 
 public class BeschreibendeStatistik extends JPanel{
 
+
     private PlaceholderTextField inputA;
     private PlaceholderTextField inputB;
     private PlaceholderTextField inputQuanA;
