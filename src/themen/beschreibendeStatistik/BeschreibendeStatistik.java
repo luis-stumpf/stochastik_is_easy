@@ -78,9 +78,9 @@ public class BeschreibendeStatistik extends JPanel{
         evalMean.addActionListener(e -> evalMean());
         evalMedian = new JButton("Median (A&B)");
         evalMedian.addActionListener(e -> evalMedian());
-        evalQuantil = new JButton("quantil (A,q1 & B,q2)");
+        evalQuantil = new JButton("Quantil (A,q1 & B,q2)");
         evalQuantil.addActionListener(e -> evalQuantil());
-        evalMostFreq = new JButton("mostFreq (A&B)");
+        evalMostFreq = new JButton("MostFreq (A&B)");
         evalMostFreq.addActionListener(e -> evalMostFreq());
         evalVar = new JButton("Varianz (A&B)");
         evalVar.addActionListener(e -> evalVar());
@@ -88,7 +88,7 @@ public class BeschreibendeStatistik extends JPanel{
         evalStdAbweichung.addActionListener(eval -> evalStdAbweichung());
         evalSpannweite = new JButton("Spannweite (A&B)");
         evalSpannweite.addActionListener(event -> evalSpannweite());
-        evalInterQuanAbs = new JButton("Interquantilabstand (A&B)");
+        evalInterQuanAbs = new JButton("Interquartilabstand (A&B)");
         evalInterQuanAbs.addActionListener(event -> evalInterQuanAbs());
         evalEmpKov = new JButton("Kovarianz");
         evalEmpKov.addActionListener(event -> evalEmpKov());
