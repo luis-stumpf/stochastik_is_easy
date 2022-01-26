@@ -29,7 +29,6 @@ public class NormalVerteilung extends JPanel {
     double xo;
     double result;
 
-    //TODO nicht mehr button umbenenen ;)
 
     public NormalVerteilung(){
 
@@ -61,7 +60,7 @@ public class NormalVerteilung extends JPanel {
         evalMax.addActionListener(e -> evalMax());
         evalMin = new JButton("Mindestens");
         evalMin.addActionListener(e -> evalMin());
-        evalNotMore = new JButton("Nicht mehr");
+        evalNotMore = new JButton("Nicht Überschritten");
         evalNotMore.addActionListener(e -> evalNotMore());
 
         panel3.add(evalEW);
