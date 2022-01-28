@@ -4,6 +4,7 @@ import org.apache.commons.math3.exception.DimensionMismatchException;
 import org.apache.commons.math3.exception.MathIllegalArgumentException;
 import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
+import themen.beschreibendeStatistik.beispiele.BeschreibendeStatistikInfo;
 import themen.diskretewarsch.info.BinominalVerteilungInfo;
 import org.apache.commons.math3.stat.correlation.Covariance;
 
@@ -298,7 +299,7 @@ public class BeschreibendeStatistik extends JPanel{
     }
 
     private void showInfo() {
-        new BinominalVerteilungInfo();
+        new BeschreibendeStatistikInfo();
     }
 
     private boolean tryEval(){
