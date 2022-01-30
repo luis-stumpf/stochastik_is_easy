@@ -31,7 +31,7 @@ public class ExponentialVerteilung extends JPanel {
     public ExponentialVerteilung(){
         JPanel panel1 = new JPanel();
         panel1.setLayout(new GridLayout(3, 1));
-        panel1.add(new JLabel("𝝀"));
+        panel1.add(new JLabel("EW oder 1/𝝀 !"));
         panel1.add(new JLabel("x"));
         panel1.add(new JLabel("Result"));
 

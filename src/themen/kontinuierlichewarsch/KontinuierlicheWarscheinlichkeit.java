@@ -23,9 +23,13 @@ public class KontinuierlicheWarscheinlichkeit extends JPanel {
         normalVerteilung = new JButton("NormalVerteilung");
         normalVerteilung.addActionListener(e -> toNormalVerteilung(cl, cp));
 
+        JLabel label = new JLabel("<= || >= entspricht < | >\n P(X=x) ist immer 0");
+
         this.add(normalVerteilung);
         this.add(exponentialVerteilung);
         this.add(gleichVerteilung);
+
+        this.add(label);
         Border border = BorderFactory.createTitledBorder("Kontinuierliche Warscheinlickeit");
         this.setBorder(border);
     }
