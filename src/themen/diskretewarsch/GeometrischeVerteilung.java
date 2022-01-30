@@ -94,7 +94,7 @@ public class GeometrischeVerteilung extends JPanel {
     private void evalExact() {
         if(tryEval()) {
             GeometricDistribution distribution = new GeometricDistribution(bo);
-            result = distribution.probability(ao);
+            result = distribution.probability(ao-1);
             res.setText("" + String.format(Locale.US, "%.6f", result));
         }
     }
