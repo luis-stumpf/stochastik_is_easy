@@ -76,7 +76,7 @@ public class ZufallsvariableDiskret extends JPanel {
         this.add(panel3);
 
         CompoundBorder border = new CompoundBorder(BorderFactory.createEmptyBorder(5,5,5,5),
-                BorderFactory.createTitledBorder("poisson Verteilung"));
+                BorderFactory.createTitledBorder("disk ZV"));
         this.setBorder(border);
 
     }
